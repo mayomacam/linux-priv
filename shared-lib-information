@@ -1,0 +1,6 @@
+Run ldd against the apache2 program file to see which shared libraries are used by the program:
+
+ldd 
+
+===========================================================================================================
+

